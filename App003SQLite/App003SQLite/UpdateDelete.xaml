@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App003SQLite.UpdateDelete">
+    <ContentPage.Content>
+   
+
+        <StackLayout FlexLayout.AlignSelf="Center">
+            <Frame BackgroundColor="#1196a8" Padding="24" CornerRadius="0">
+                <Label Text="Datos de Persona" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+            </Frame>
+            <ScrollView BackgroundColor="White">
+                <StackLayout Padding="40,40,40,40">
+
+                    <Label  FontSize="Subtitle" Text="Codigo"></Label>
+                    <Entry   x:Name="id" Text="{Binding id}" ></Entry>
+                    <Label  FontSize="Subtitle" Text="Nombre"></Label>
+                    <Entry   x:Name="nombre" Text="{Binding name}"></Entry>
+                    <Label  FontSize="Subtitle" Text="Apellido"></Label>
+                    <Entry  x:Name="apellido" Text="{Binding apellido}"></Entry>
+                    <Label  FontSize="Subtitle" Text="Edad"></Label>
+                    <Entry Keyboard="Numeric"  x:Name="edad" Text="{Binding edad}"></Entry>
+                    <Label  FontSize="Subtitle" Text="Correo"></Label>
+                    <Entry Keyboard="Email" x:Name="correo" Text="{Binding correo}"></Entry>
+                    <Label  FontSize="Subtitle" Text="Direccion"></Label>
+                    <Entry x:Name="direccion" Text="{Binding direccion}"></Entry>
+                    <Label FontSize="Subtitle" Text="fecha"></Label>
+                    <DatePicker  x:Name="fecha" ></DatePicker>
+       
+                    
+
+                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnUpdate" Clicked="ActualizarPersonas"  Text="Actualizar " BackgroundColor="White" TextColor="Black" CornerRadius="10" FontSize="23" Padding="30,10,30,10"/>
+                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnDelete" Clicked="btnDelete_Clicked" Text="Borrar " BackgroundColor="White" TextColor="Black" CornerRadius="10" FontSize="23" Padding="30,10,30,10"/>
+
+
+                </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
