@@ -7,6 +7,8 @@ namespace App003SQLite.model
 {
     public class Personas
     {
+        
+
 
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
@@ -21,6 +23,8 @@ namespace App003SQLite.model
         public string direccion { get; set; }
         [MaxLength(100)]
         public DateTime fecha { get; set; }
+
+       // public byte[] imagen { get; set; }
 
 
     }

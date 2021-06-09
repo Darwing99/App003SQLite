@@ -27,18 +27,23 @@ namespace App003SQLite
         {
 
         }
+
+
+       
+
         public async void mostrarDatos()
         {
             try
             {
                  var personasList = await crud.getReadPersonas();
+                 
 
                 if (personasList != null)
                 {
                     lista.ItemsSource = personasList;
                 }
                
-            }catch(SQLiteException E)
+            }catch(SQLiteException e)
             {
                 await DisplayAlert("Lista","no hay registros","ok");
 
@@ -46,6 +51,8 @@ namespace App003SQLite
 
            
         }
+
+
         private async void selectedList(object sender, SelectedItemChangedEventArgs e)
         {
 

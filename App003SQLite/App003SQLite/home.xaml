@@ -7,12 +7,11 @@
                      IconImageSource="" Order="Primary"
                      Priority="0"
                      Clicked="menuToolbar_Clicked">
-            
+
         </ToolbarItem>
-      
     </ContentPage.ToolbarItems>  
     <StackLayout>
-        <Label x:Name="user" Text="Registro de personas"
+        <Label FontSize="Title" BackgroundColor="AliceBlue" Text="Registro de personas"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 

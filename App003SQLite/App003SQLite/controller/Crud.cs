@@ -19,15 +19,18 @@ namespace App003SQLite.controller
 
         public Task<Personas> getPersonasId(int id)
         {
-            return conn.GetConnectionAsync()
+            return conn
+                .GetConnectionAsync()
                 .Table<Personas>()
-                .Where(lista => lista.id == id)
+                .Where(item => item.id == id)
                 .FirstOrDefaultAsync(); 
         }
 
         public Task<int> getPersonasUpdateId(Personas personas)
         {
-            return conn.GetConnectionAsync().UpdateAsync(personas);
+            return conn
+                .GetConnectionAsync()
+                .UpdateAsync(personas);
               
         }
 

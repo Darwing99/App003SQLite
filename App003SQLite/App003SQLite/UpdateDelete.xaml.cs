@@ -37,6 +37,7 @@ namespace App003SQLite
                 await crud.getPersonasUpdateId(update);
                 await DisplayAlert("Update","Datos Actualizados","ok" );
                 limpiar();
+                await Navigation.PopAsync();
             }
         }
 
@@ -61,6 +62,8 @@ namespace App003SQLite
                 await crud.Delete(persona);
                 await DisplayAlert("Delete" ,"Datos Eliminados", "ok");
                 limpiar();
+                await Navigation.PopAsync();
+                
             }
         }
     }

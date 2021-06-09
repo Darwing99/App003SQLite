@@ -26,12 +26,19 @@
                     <Entry x:Name="direccion" Text="{Binding direccion}"></Entry>
                     <Label FontSize="Subtitle" Text="fecha"></Label>
                     <DatePicker  x:Name="fecha" ></DatePicker>
-       
-                    
 
-                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnUpdate" Clicked="ActualizarPersonas"  Text="Actualizar " BackgroundColor="White" TextColor="Black" CornerRadius="10" FontSize="23" Padding="30,10,30,10"/>
-                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnDelete" Clicked="btnDelete_Clicked" Text="Borrar " BackgroundColor="White" TextColor="Black" CornerRadius="10" FontSize="23" Padding="30,10,30,10"/>
-
+                    <Grid>
+                        <Button Grid.Row="0" Grid.Column="0" 
+                                Margin="10" FontFamily="Ubuntu" 
+                                x:Name="btnUpdate" Clicked="ActualizarPersonas"  
+                                Text="Update " BackgroundColor="Black" TextColor="white" 
+                                CornerRadius="10" FontSize="18" Padding="30,10,30,10"/>
+                        <Button  Grid.Row="0" Grid.Column="1" Margin="10" FontFamily="Ubuntu"
+                                 x:Name="btnDelete" Clicked="btnDelete_Clicked" Text="Delete " 
+                                 BackgroundColor="Gray" TextColor="Black" CornerRadius="10" 
+                                 FontSize="18" Padding="30,10,30,10"/>
+                    </Grid>
+                  
 
                 </StackLayout>
             </ScrollView>
