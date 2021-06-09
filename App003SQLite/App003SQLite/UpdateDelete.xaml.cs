@@ -64,7 +64,7 @@ namespace App003SQLite
                 limpiar();
                 await Navigation.PopAsync();
                 
-            }
+            } 
         }
     }
 }
