@@ -12,8 +12,8 @@
   
     </ContentPage.ToolbarItems>
     <StackLayout FlexLayout.AlignSelf="Center">
-        <Frame BackgroundColor="#1196a8" Margin="10" Padding="24" CornerRadius="10">
-            <Label Text="Datos de Persona" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+        <Frame Margin="10" Padding="24" CornerRadius="10">
+            <Label Text="Registrar Empleado nuevo" HorizontalTextAlignment="Center" TextColor="black" FontSize="30"/>
         </Frame>
         
         <ScrollView BackgroundColor="White">

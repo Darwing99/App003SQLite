@@ -164,23 +164,29 @@ namespace App003SQLite.ModelView
         }
         async void actualizar()
         {
-            if (!string.IsNullOrEmpty(Id.ToString()))
+
+            bool conf = await App.Current.MainPage.DisplayAlert("Update", "Actualizar datos de Empleado", "Accept", "Cancel");
+            if (conf)
             {
-                Personas update = new Personas
+                if (!string.IsNullOrEmpty(Id.ToString()))
                 {
-                    id = Convert.ToInt32(Id.ToString()),
-                    name = Name,
-                    apellido = Apellido,
-                    edad = Convert.ToDouble(Edad),
-                    direccion = Direccion,
-                    correo = Correo,
-                    puesto = Puesto
-                };
-                await crud.getPersonasUpdateId(update);
-                await App.Current.MainPage.DisplayAlert("Update", "Datos Actualizados", "ok");
-                await App.Current.MainPage.Navigation.PushAsync(new home());
-               
+                    Personas update = new Personas
+                    {
+                        id = Convert.ToInt32(Id.ToString()),
+                        name = Name,
+                        apellido = Apellido,
+                        edad = Convert.ToDouble(Edad),
+                        direccion = Direccion,
+                        correo = Correo,
+                        puesto = Puesto
+                    };
+                    await crud.getPersonasUpdateId(update);
+                    await App.Current.MainPage.DisplayAlert("Update", "Datos Actualizados", "ok");
+                    await App.Current.MainPage.Navigation.PushAsync(new home());
+
+                }
             }
+              
         }
 
     }
