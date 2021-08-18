@@ -16,15 +16,15 @@ namespace App003SQLite.model
         public string name { get; set; }
         [MaxLength(250)]
         public string apellido { get; set; }
-        public int edad { get; set; }
+        public double edad { get; set; }
         [MaxLength(100),Unique]
         public string correo { get; set; }
         [MaxLength(300)]
         public string direccion { get; set; }
         [MaxLength(100)]
-        public DateTime fecha { get; set; }
+        public string puesto { get; set; }
 
-       // public byte[] imagen { get; set; }
+      
 
 
     }

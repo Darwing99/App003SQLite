@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App003SQLite.MainPage">
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Lista" Priority="0" Order="Primary" Clicked="lista_Clicked">
 
@@ -11,32 +12,37 @@
   
     </ContentPage.ToolbarItems>
     <StackLayout FlexLayout.AlignSelf="Center">
-        <Frame BackgroundColor="#1196a8" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="#1196a8" Margin="10" Padding="24" CornerRadius="10">
             <Label Text="Datos de Persona" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
         </Frame>
         
         <ScrollView BackgroundColor="White">
-             <StackLayout Padding="40,40,40,40">
+            <Frame Margin="10">
+                <StackLayout Padding="40,40,40,40">
 
-                <Label  FontSize="Subtitle" Text="Nombre"></Label>
-            <Entry   x:Name="nombre"></Entry>
-                <Label  FontSize="Subtitle" Text="Apellido"></Label>
-            <Entry  x:Name="apellido"></Entry>
-                <Label  FontSize="Subtitle" Text="Edad"></Label>
-            <Entry Keyboard="Numeric"  x:Name="edad"></Entry>
-             <Label  FontSize="Subtitle" Text="Correo"></Label>
-            <Entry Keyboard="Email" x:Name="correo"></Entry>
-             <Label  FontSize="Subtitle" Text="Direccion"></Label>
-            <Entry x:Name="direccion"></Entry>
-             <Label FontSize="Subtitle" Text="fecha"></Label>
-            <DatePicker  x:Name="fecha"></DatePicker>
-                
+                    <Label  FontSize="Subtitle" Text="Nombre"></Label>
+                    <Entry Text="{Binding Name,Mode=TwoWay}"  x:Name="nombre"></Entry>
+                    <Label  FontSize="Subtitle" Text="Apellido"></Label>
+                    <Entry Text="{Binding Apellido,Mode=TwoWay}"  x:Name="apellido"></Entry>
+                    <Label  FontSize="Subtitle" Text="Edad"></Label>
+                    <Entry Text="{Binding Edad,Mode=TwoWay}" Keyboard="Numeric"  x:Name="edad"></Entry>
+                    <Label  FontSize="Subtitle" Text="Correo"></Label>
+                    <Entry Text="{Binding Correo,Mode=TwoWay}" Keyboard="Email" x:Name="correo"></Entry>
+                    <Label  FontSize="Subtitle" Text="Direccion"></Label>
+                    <Entry Text="{Binding Direccion,Mode=TwoWay}" x:Name="direccion"></Entry>
+                    <Label FontSize="Subtitle" Text="Puesto"></Label>
+                    <Entry Text="{Binding Puesto,Mode=TwoWay}"  x:Name="puesto"></Entry>
+
+                    <Button Margin="10" FontFamily="Ubuntu" x:Name="btnSave" Command="{Binding GuardarCommand,Mode=TwoWay}"
+                        Text="Guardar "
+                        BackgroundColor="Black"
+                        TextColor="White" CornerRadius="10" 
+                        FontSize="23" Padding="30,10,30,10"/>
 
 
-                <Button Margin="10" FontFamily="Ubuntu" x:Name="btnSave" Clicked="saveInfo" Text="Guardar " BackgroundColor="Black" TextColor="White" CornerRadius="10" FontSize="23" Padding="30,10,30,10"/>
-
-
-            </StackLayout>
+                </StackLayout>
+            </Frame>
+           
         </ScrollView>
        
        

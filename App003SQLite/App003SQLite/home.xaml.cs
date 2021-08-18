@@ -14,13 +14,17 @@ namespace App003SQLite
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class home : ContentPage
     {
-        Coneccion conn = new Coneccion();
-        Crud crud = new Crud();
+  
         public home()
         {
             InitializeComponent();
 
-            mostrarDatos();
+            OnAppearing();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            BindingContext = new ModelView.ListImageViewModel(Navigation);
         }
 
         private void menuToolbar_Clicked(object sender, EventArgs e)
@@ -31,58 +35,7 @@ namespace App003SQLite
 
        
 
-        public async void mostrarDatos()
-        {
-            try
-            {
-                 var personasList = await crud.getReadPersonas();
-                 
 
-                if (personasList != null)
-                {
-                    lista.ItemsSource = personasList;
-                }
-               
-            }catch(SQLiteException e)
-            {
-                await DisplayAlert("Lista","no hay registros","ok");
-
-            }
-
-           
-        }
-
-
-        private async void selectedList(object sender, SelectedItemChangedEventArgs e)
-        {
-
-            var personas = new Personas();
-           
-            var obj = (Personas)e.SelectedItem;
-            if (!string.IsNullOrEmpty(obj.id.ToString())) {
-                var persona = await crud.getPersonasId(obj.id);
-                if (persona != null)
-                {
-                    var update = new UpdatePersona
-                    {
-                        id=persona.id,
-                        name=persona.name,
-                        apellido=persona.apellido,
-                        edad=persona.edad, 
-                        direccion=persona.direccion,
-                        correo=persona.correo,
-                        fecha=persona.fecha.ToString()
-
-                    };
-                    var pageUpdate = new UpdateDelete();
-                    pageUpdate.BindingContext = update;
-                    await Navigation.PushAsync(pageUpdate);
-                }
-            
-            }
-
-            
-
-        }
+     
     }
 }

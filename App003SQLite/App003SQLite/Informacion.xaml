@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          
+           
+             
+             x:Class="App003SQLite.Informacion">
+ 
+    <ContentPage.Content>
+
+        <StackLayout Padding="20">
+            <Frame Margin="10">
+                <StackLayout>
+                    <Entry IsVisible="false"  Text="{Binding Id}"/>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Name"/>
+                        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+
+                 
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+                     
+                        <Label Grid.Row="1" Grid.Column="0" Text="Apellido"/>
+                        <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Apellido}"/>
+                        
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+                      
+                        <Label Grid.Row="2" Grid.Column="0" Text="Correo"/>
+                        <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Correo}"/>
+
+                     
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Edad"/>
+                        <Entry Grid.Row="3" Keyboard="Numeric" Grid.Column="1" Text="{Binding Edad}"/>
+
+
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+                     
+                        <Label Grid.Row="4" Grid.Column="0" Text="Direccion"/>
+                        <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Direccion}" />
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Vertical">
+
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Puesto"/>
+                        <Entry Grid.Row="5" Grid.Column="1" Text="{Binding Puesto}" />
+                    </StackLayout>
+                    <StackLayout Margin="10"  Orientation="Horizontal">
+
+
+
+                        <Button Text="Limpiar" Command="{Binding ClearCommand }"></Button>
+                        <Button Text="Delete" Command="{Binding DeleteCommand }"></Button>
+                        <Button Text="Update" Command="{Binding UpdateCommand }"></Button>
+                    </StackLayout>
+                </StackLayout>
+             
+               
+
+            </Frame>
+
+          
+
+
+            
+            </StackLayout>
+        </ContentPage.Content>
+    
+</ContentPage>
