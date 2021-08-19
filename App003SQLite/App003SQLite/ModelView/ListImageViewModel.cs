@@ -93,7 +93,7 @@ namespace App003SQLite.ModelView
                   
                 };
 
-                await Navigation.PushAsync(page);
+                await Navigation.PushModalAsync(page);
             }
             else
             {

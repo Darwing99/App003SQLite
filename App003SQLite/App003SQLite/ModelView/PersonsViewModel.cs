@@ -156,7 +156,7 @@ namespace App003SQLite.ModelView
                     await crud.Delete(persona);
                     await App.Current.MainPage.DisplayAlert("Delete", "Datos Eliminados", "ok");
                     Clear();
-                    await App.Current.MainPage.Navigation.PushAsync(new home());
+                    await App.Current.MainPage.Navigation.PopModalAsync();
 
                 }
             }
@@ -182,7 +182,7 @@ namespace App003SQLite.ModelView
                     };
                     await crud.getPersonasUpdateId(update);
                     await App.Current.MainPage.DisplayAlert("Update", "Datos Actualizados", "ok");
-                    await App.Current.MainPage.Navigation.PushAsync(new home());
+                    await App.Current.MainPage.Navigation.PopModalAsync();
 
                 }
             }
